@@ -1,0 +1,14 @@
+copyright.startyear=2013
+
+author.name=Your name
+author.email=Your Email
+
+project.name.short=JAppDater
+project.name.long=JAppDater
+project.version.num=1.0.0
+
+
+#setup your workspace and sub dirs.
+dir.workspace=absolute path to your eclipse workspace
+dir.src=${dir.workspace}JAppDater/
+dir.build=${dir.workspace}JAppDater_Release/

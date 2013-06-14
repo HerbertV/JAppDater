@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- 
+	ANT BUILDER
+ -->
+<project default="process" name="JAppDater build file">
+    <description>
+    	Master build file for releasing JAppDater
+    </description>
+	
+	
+<!--
+	=========================================================================== 
+		Public Properties
+	===========================================================================
+	change it within the props file
+-->
+	<loadproperties srcfile="build.properties"/>
+
+
+<!-- 
+	===========================================================================
+		Private Properties
+	===========================================================================
+	Do not touch!
+	At least until you know what you are doing ;)
+ -->
+		
+	<!-- add ant-contrib lib -->
+	<!-- http://ant-contrib.sourceforge.net/ -->
+	<!-- Version 1.0b3 -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="ant-contrib/ant-contrib-1.0b3.jar"/>
+		</classpath>
+	</taskdef>
+	
+	<property name="project.jar" value="${project.name.short}.jar"/>
+		
+	
+	<!-- timestamp for build -->
+	<tstamp>
+		<format property="tsNow" pattern="yyyy-MM-dd HH:mm:ss"/>
+	</tstamp>
+	
+	<tstamp>
+		<format property="tsYear" pattern="yyyy"/>
+	</tstamp>
+	
+	<!-- setting source path now -->
+	<fileset dir="${dir.src}"/>
+	
+	<path id="path.jarlib">
+		<fileset dir="${dir.src}${dir.lib}">
+				<include name="**/*.jar"/>
+		</fileset>
+	</path>
+		
+	<!-- increment build -->
+	<buildnumber file="${dir.src}/ant/buildproject.num" />
+		
+<!--
+	=========================================================================== 
+		DEFAULT Target BUILD
+	===========================================================================
+ -->	
+	<target name="process">
+		<echo message="JAppDater building ... "/>
+		<echo message="${ant.version}"/>
+		<echo message="${tsNow}"/>
+		<echo>
+		</echo>
+		<echo message="Project Version: ${project.version.num}"/>
+		
+		<echo>
+		</echo>
+		
+		<echo message="Ant Build: ${project.name.long} ${project.version.num}-build${build.number}"/>
+		
+		<!-- create jar -->
+		<delete file="${dir.build}${project.jar}"/>
+				
+		<jar destfile="${dir.build}${project.jar}">
+			<manifest>
+				<!-- java attributes -->
+				<attribute name="Class-Path" 
+		       			value=""/>
+				<attribute name="Main-Class"
+						value="jhv.jappdater.Updater"/>
+							
+				<!-- info attributes -->
+				<attribute name="Implementation-Title" 
+						value="${project.name.long}"/>
+				<attribute name="Implementation-Version" 
+						value="${project.version.num}-b${build.number}"/>
+			    
+				<attribute name="Build-by" 
+		    			value="${author.name} &lt;${author.email}&gt;"/>
+				<attribute name="Build-Date" 
+					   	value="${tsNow}"/>
+				
+				<attribute name="Copyright" 
+						value="(c) ${copyright.startyear}-${tsYear} ${author.name} - Licensed under The MIT License."/>
+				
+				<!-- launcher attributes -->
+				<attribute name="Short-Version" 
+						value="${project.version.num}"/>
+			    
+			</manifest>
+		    <fileset dir="${dir.src}bin/">
+				<filename name="**/*.class"/>
+			</fileset>	
+			<fileset dir="${dir.src}">
+				<or>
+					<filename name="resources/**/*.txt"/>
+					<filename name="resources/**/*.png"/>
+					<filename name="resources/**/*.gif"/>
+					<filename name="resources/**/*.jpg"/>
+					<filename name="resources/**/*.properties"/>
+				</or>
+			</fileset>
+		</jar>
+		
+		<checksum file="${dir.build}${project.jar}" forceOverwrite="yes"/>
+	</target>
+
+</project>

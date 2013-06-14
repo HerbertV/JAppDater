@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JAppDater 
+		version="1.0.0" 
+		xsi:noNamespaceSchemaLocation="jappdater.xsd" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	>
+	<!-- the index can also be a php file that generates a JAppDater xml -->
+	<application 
+			server="http://localhost:8080/herbertv/JAppDaterTest/"
+			index="index.xml"
+			name="SampleApp" 
+			version="1.0"
+		/>
+	
+	<files>
+		<!-- updates always -->
+		<file ID="1"
+				src="sampleupdate/sample.txt" 
+				dest="/sample.txt" 
+			/>
+		<!-- no update needed test -->
+		<file  ID="2"
+				src="sampleupdate/sample1.txt" 
+				dest="/sample1.txt"
+				version="1.0" 
+			/>	
+		<!-- update check with version number checksum works similiar -->
+		<file  ID="3"
+				src="sampleupdate/sample2.txt" 
+				dest="subfolder/sample2.txt"
+				version="1.0" 
+			/>
+		<!-- update sample with unpack -->
+		<file  ID="4"
+				src="sampleupdate/sample3.zip" 
+				dest="unpackfolder/"
+				version="1.0"
+				unpack="true" 
+			/>			
+	</files>
+</JAppDater>
