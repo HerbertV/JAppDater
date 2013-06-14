@@ -16,10 +16,9 @@ Each download can have its own version or checksum, to verify if a download is n
 ![Checker Window](https://raw.github.com/HerbertV/JAppDater/master/docs/screen_checker.png)
 ![Updater Window](https://raw.github.com/HerbertV/JAppDater/master/docs/screen_updater.png)
 
-## Download 
+## Download Binary @ Bintray 
 
-coming soon...
-
+https://bintray.com/herbertv/generic/JAppDater
 
 ## Usage
 
