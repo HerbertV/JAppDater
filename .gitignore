@@ -1,0 +1,20 @@
+# JAppDater gitignore
+
+# Eclipse Related
+.project
+.classpath
+.metadata
+.settings/
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.MF
+.externalToolBuilders/
+
+# JAppDater Releated
+
+ant/build.properties
+ant/buildproject.num
+
+/tmp/**
