@@ -1,6 +1,6 @@
 # JAppDater 
 
-Version 1.0.0
+Version 1.0.1
 
 -----------------------------------
 
@@ -84,6 +84,13 @@ If the update was successful the argument -jadfinished is send to your static ma
 	java -cp jAppDater.jar jhv.jappdater.Checker
 	// launch update
 	java -jar jAppDater.jar [optional your properties]
+
+
+## Other Samples
+
+You can also check 
+[DSAGenesis Launcher](https://github.com/HerbertV/DSAGenesis/blob/master/src/dsagenesis/core/GenesisLauncher.java) 
+where JAppDater is implemented.
 
 
 ## License:

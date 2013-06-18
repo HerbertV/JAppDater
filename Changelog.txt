@@ -1,0 +1,9 @@
+Version - 1.0.1:
+--------------------------------------------------------------------------------
+- Fixed: Update finished event was not fired.
+- Fixed: additional event was fired if an exception occurred.
+
+
+Version - 1.0.0:
+--------------------------------------------------------------------------------
+Initial Release

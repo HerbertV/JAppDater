@@ -27,7 +27,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -78,7 +77,7 @@ public class UpdaterTask
 	
 	private VersionXML remoteXML;
 	
-	private boolean isUpdateAvailable = false;
+	private boolean exceptionOccured = false;
 	
 	private UpdateEventProcessor uep;
 	
@@ -160,7 +159,7 @@ public class UpdaterTask
 			
 		} catch( Exception e ) {
 			uep.fireUpdateEventException(e);
-			e.printStackTrace();
+			exceptionOccured = true;
 		} 
 		return null;
 	}
@@ -440,15 +439,10 @@ public class UpdaterTask
 		{
 			this.get();
 			
-			if( isUpdateAvailable )
-			{
-				uep.fireUpdateEventUpdateAvailable(
-						remoteXML.getApplicationVersion()
-					);
-				
-			} else {
-				uep.fireUpdateEventNoUpdateAvailable();
-			}
+			if( exceptionOccured )
+				return;
+			
+			uep.fireUpdateEventFinished();
 			
 		} catch( Exception e ) {
 			uep.fireUpdateEventException(e);

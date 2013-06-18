@@ -132,7 +132,6 @@ public class UpdaterFrame
 		{
 			if( updateFinsished )
 				startup += " -jadfinished";
-			
 			try {
 				Runtime.getRuntime().exec(startup);
 			} catch (IOException e) {

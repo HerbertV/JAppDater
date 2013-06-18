@@ -53,6 +53,8 @@ public class CheckerTask
 	
 	private boolean isUpdateAvailable = false;
 	
+	private boolean exceptionOccured = false;
+	
 	private UpdateEventProcessor uep;
 
 	
@@ -117,7 +119,7 @@ public class CheckerTask
 			
 		} catch( Exception e ) {
 			uep.fireUpdateEventException(e);
-			e.printStackTrace();
+			exceptionOccured = true;
 		} 
 		return null;
 	}
@@ -179,8 +181,6 @@ public class CheckerTask
 		
 	}
 	
-	
-	
 	@Override
 	protected void process(List<String> chunks) 
 	{
@@ -194,6 +194,9 @@ public class CheckerTask
 		try 
 		{
 			this.get();
+			
+			if( exceptionOccured )
+				return;
 			
 			if( isUpdateAvailable )
 			{

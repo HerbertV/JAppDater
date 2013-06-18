@@ -49,7 +49,7 @@ public class Updater
 	/**
 	 * jAppDater Version
 	 */
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "1.0.1";
 	
 	public static final String DEFAULT_PROPERTIES = "resources/en_GB/default.properties";
 	
@@ -136,7 +136,6 @@ public class Updater
 		Properties p;
 		if( args.length == 1 )
 		{
-			System.out.println(args);
 			p = loadProperties(args[0]);
 		} else {
 			p = loadProperties(DEFAULT_PROPERTIES);

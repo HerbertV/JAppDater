@@ -154,6 +154,9 @@ public abstract class AbstractJADFrame
 		btnDone.setEnabled(true);
 		
 		if( event.getType() == UpdateEvent.EXCEPTION )
-			txtOutput.append(event.getException().getMessage());
+		{
+			txtOutput.append(event.getException().toString());
+			txtOutput.repaint();
+		}
 	}
 }
