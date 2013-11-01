@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <JAppDater 
 		version="1.0.0" 
-		xsi:noNamespaceSchemaLocation="jappdater.xsd" 
+		xsi:noNamespaceSchemaLocation="http://xsd.veitengruber.com/jappdater.xsd" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	>
 	

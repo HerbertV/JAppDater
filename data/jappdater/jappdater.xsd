@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Herbert Veitengruber (privat) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="JAppDater">
 		<xs:annotation>
-			<xs:documentation>update index for JAppDater</xs:documentation>
+			<xs:documentation>update index for JAppDater. latest Version available here: http://xsd.veitengruber.com/jappdater.xsd</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
