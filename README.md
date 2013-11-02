@@ -41,7 +41,7 @@ Put your remote index.xml and your update files on the server.
 
 ### Use custom properties
 
-Put all the entries from the [default properties file]()
+Put all the entries from the [default properties file](https://github.com/HerbertV/JAppDater/blob/master/resources/en_GB/default.properties)
 into your custom properties file.
 
 ## Start from your Application
