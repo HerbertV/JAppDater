@@ -9,6 +9,14 @@ project.version.num=1.0.0
 
 
 #setup your workspace and sub dirs.
-dir.workspace=absolute path to your eclipse workspace
+dir.workspace=${basedir}/
 dir.src=${dir.workspace}JAppDater/
 dir.build=${dir.workspace}JAppDater_Release/
+
+#upload xsd properties
+upload.enabled=false
+upload.server=
+upload.user=
+upload.pwd=
+upload.xsdfile=data/jappdater/jappdater.xsd
+upload.dir=
