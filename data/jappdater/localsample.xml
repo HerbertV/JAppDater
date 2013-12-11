@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <JAppDater 
-		version="1.0.0" 
+		version="1.1.0" 
 		xsi:noNamespaceSchemaLocation="http://xsd.veitengruber.com/jappdater.xsd" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	>
@@ -36,6 +36,12 @@
 				dest="unpackfolder/"
 				version="1.0"
 				unpack="true" 
-			/>			
+			/>	
+		<!-- this sample is removed -->
+		<file  ID="5"
+				src="sampleupdate/sampleObsolete.txt" 
+				dest="/sampleObsolete.txt"
+				version="1.0"
+			/>		
 	</files>
 </JAppDater>

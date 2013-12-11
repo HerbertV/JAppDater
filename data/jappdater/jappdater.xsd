@@ -48,8 +48,23 @@ unpack = (optional) if true and the source is a zip/jar the content is unpacked 
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="obsolete" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of files that are no longer needed.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="file" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="ID" type="xs:string" use="required"/>
+									<xs:attribute name="dest" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
-			<xs:attribute name="version" type="xs:string" use="required" fixed="1.0.0"/>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="1.1.0"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

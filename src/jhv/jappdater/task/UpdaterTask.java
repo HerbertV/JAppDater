@@ -144,6 +144,9 @@ public class UpdaterTask
 			publish( "\n" + this.properties.getProperty("updater.msg.installing") );
 			doInstall(resources);
 			
+			publish( "\n" + this.properties.getProperty("updater.msg.obsolete") );
+			doRemoveObsoleteFiles();
+			
 			publish( "\n" + this.properties.getProperty("updater.msg.cleanup") );
 			
 			// first move remote to local
@@ -398,6 +401,33 @@ public class UpdaterTask
 			in.close();
 		}
 		zip.close();
+	}
+	
+	/**
+	 * removes all files listed in the obsolete list.
+	 */
+	private void doRemoveObsoleteFiles()
+	{
+		Element obsolete;
+		File f;
+		String filename;
+		NodeList obsoleteFiles = remoteXML.getObsoleteNodes();
+		int filecount = obsoleteFiles.getLength();
+		
+		for( int i=0; i<filecount; i++ )
+		{
+			obsolete = (Element)obsoleteFiles.item(i);
+			filename = obsolete.getAttribute("dest");
+			f = new File( filename );
+			if( f.exists() )
+			{
+				publish(
+	    				properties.getProperty("updater.msg.delete")
+	    					+ filename
+	    			);
+				f.delete();
+			}
+		}
 	}
 	
 	/**

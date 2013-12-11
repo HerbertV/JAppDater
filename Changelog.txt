@@ -1,3 +1,9 @@
+Version - 1.1.0:
+--------------------------------------------------------------------------------
+- Obsolete file handling added. 
+  Files in the obsolete list are automatically removed during the update.
+
+
 Version - 1.0.1:
 --------------------------------------------------------------------------------
 - Fixed: Update finished event was not fired.

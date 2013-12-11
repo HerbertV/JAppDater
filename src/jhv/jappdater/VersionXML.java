@@ -50,7 +50,7 @@ public class VersionXML
 	/**
 	 * XML schema version
 	 */
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "1.1.0";
 	
 	
 	// ============================================================================
@@ -286,7 +286,18 @@ public class VersionXML
 		return docElement.getElementsByTagName("file");
 	}
 	
-	
+	/**
+	 * getObsoleteNodes
+	 * 
+	 * returns the nodelist containing all obsolete files.
+	 * 
+	 * @return
+	 */
+	public NodeList getObsoleteNodes()
+	{
+		return docElement.getElementsByTagName("obsolete");
+	}
+		
 	/**
 	 * saveTo
 	 * 

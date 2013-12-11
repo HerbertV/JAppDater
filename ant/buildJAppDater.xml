@@ -103,6 +103,9 @@
 		<echo message="Uploading XSD ..."/>
 		
 		<ftp server="${upload.server}"
+				preservelastmodified="true"
+				passive="true"
+				depends="yes"
 				userid="${upload.user}"
 				password="${upload.pwd}"
 				remotedir="${upload.dir}"
